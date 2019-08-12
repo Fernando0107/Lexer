@@ -48,9 +48,17 @@ for i in range(len(spl)):
     fun(x)
 
 
+hexa = []
+dec = []
 
-print('\nGood!\n',good)
-print('\nBad!\n',bad)
+print('\nEstos numeros ingresados son correctos!\n',good)
+print('\nEstos numero ingresados son incorrectos!\n',bad)
+
+
+
+
+
+
 
 
 
@@ -63,17 +71,36 @@ print('\nBad!\n',bad)
 
 
 '''
-newarr =[]
+def fun2(array):
+    temp = []
+    temp2 = []
+    for i in range(len(array)):
+        #return(array[i])
+        y = array[i]
+        ini = array[0]
+        fin = array[1]
 
-for i in range(len(alm)):               #Revisa el primer array ->[[]]<-
-    for j in range(len(alm[i])):        #Revisa el segundo array [->[]<-]
-        print(alm[i][j], end=' ')
-        if alm[i][j] in alpha:
-            x = alm[i][j]
-            newarr.append(x)
-            print('test good!')
-        else:
-            print('Test fail')
-            break
-    print()    
+        if ini == alpha[0] and fin == alpha[1]:
+
+            temp.append(y)
+            #print('Correcto!')
+        elif y not in alpha:
+
+            temp2.append(y)
+            #print('Incorrecto')
+
+    if(len(temp) != 0):
+        hexa.append(temp)
+        dec.append(temp2)
+        
+
+
+for i in range(len(good)):
+    w = good[i]
+    #print(x)
+    #print('Resultado: \n ', fun(x))
+    fun2(w)
+
+print('\Hexa!\n', hexa)
+print('\nDec!\n', dec)
 '''
