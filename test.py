@@ -17,9 +17,9 @@ with open("testxt.txt") as f:
 space = ' '
 spl = [list(y) for x, y in itertools.groupby(alm, lambda z: z == space) if not x]
 
-print(spl)
+#print(spl)
 
-good = []
+good = []               
 bad = []
 
 def fun(array):
@@ -48,8 +48,8 @@ for i in range(len(spl)):
     fun(x)
 
 
-hexa = []
-dec = []
+hexa = []           #En este arreglo, guardariamos los hexadecimales 
+dec = []            #En este arreglo, guardariamos los decimales
 
 print('\nEstos numeros ingresados son correctos!\n',good)
 print('\nEstos numero ingresados son incorrectos!\n',bad)
