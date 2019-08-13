@@ -11,18 +11,20 @@ for i in lines:
 
 print(spliter)
 
+
+#Almacenadores de tokens
 good = []
 bad = []
 hexa = []
 dec = []
 
 def scanner(s):
-    print('test',s[0])
-    try:
+    
+    try:                                                    #Verifica si empieza con 0x 
         if len(s)>1:
             if s[0] == alpha[0] and s[1] == alpha[1]:
                 good.append(s)
-                hexa.append(s)
+                hexa.append(s)                              #Si es asi, lo appender a hexadecimal
                 return '\nCorrecto!\n'
             else:
                 pass
@@ -31,14 +33,14 @@ def scanner(s):
     except ValueError:
         pass
     try:
-        float(s)
+        float(s)                                                #Verifica si es decimal
         good.append(s)
         dec.append(s)
         return '\nCorrecto!\n'
     except ValueError:
         pass
     try:
-        import unicodedata
+        import unicodedata                                      #Verifica el valor de los hexadecimal (a-f|A-F)
         unicodedata.numeric(s)
         good.append(s)
         hexa.append(s)
@@ -50,11 +52,8 @@ def scanner(s):
     return '\nIncorrecto!\n'
 
 
-tokens = []
-
 for token in spliter:
-
-    print(token)
+    print('Token ingresado ->', token)
     print(scanner(token))
 
 print('Tokens validos:',good)
